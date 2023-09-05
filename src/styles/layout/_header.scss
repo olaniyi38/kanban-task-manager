@@ -1,0 +1,105 @@
+@use '../utils' as *;
+
+.header {
+  @include flex();
+  background: $dark-purple;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.267);
+
+
+  &__title {
+    flex: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    border-right: 1px solid rgba(204, 204, 204, 0.267);
+    padding: 1.5rem 1rem;
+    max-width: 18rem;
+
+    // flex: 1 1 0;
+
+
+  }
+
+  &__board-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    position: relative;
+    padding: 0rem 2rem;
+
+    i {
+      position: absolute;
+      bottom: .3rem;
+      right: -1.3rem;
+
+      svg {
+        stroke-width: 1.1px;
+        width: .9rem;
+        height: .9rem;
+        stroke: $light-purple;
+      }
+    }
+  }
+
+  &__actions {
+    @include flex();
+    gap: 0rem .5rem;
+    margin-left: auto;
+    margin-right: 1rem;
+
+
+    svg {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+
+  }
+
+  &__add-board {
+    background: $light-purple;
+    padding: .2rem .5rem;
+    border-radius: .5rem;
+
+    span {
+      display: none;
+    }
+
+    svg {
+      stroke-width: 5px;
+    }
+
+  }
+
+  @media screen and (min-width:48rem) {
+    &__title {
+      font-size: 1.4rem;
+      width: 18rem;
+
+    }
+
+    &__board-name {
+      font-size: 1.4rem;
+
+      i {
+        display: none;
+      }
+    }
+
+    &__add-board {
+      font-weight: 600;
+      font-size: .9rem;
+      padding: .5rem 1rem;
+      @include flex();
+      gap: 0rem .3rem;
+
+      span {
+        display: block;
+      }
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use '../utils' as *;
+
+.task-modal {
+
+    &__header {
+        @include flex($justify: space-between);
+        font-weight: 600;
+        font-size: 1.05rem;
+
+        svg {
+            color: $gray-blue;
+        }
+    }
+
+    &__description {
+        color: $gray-blue;
+        font-size: .9rem;
+    }
+
+    &__subtasks {
+        h1 {
+            font-weight: 600;
+            font-size: .9rem;
+        }
+
+        > div {
+            margin-top: 1rem;
+           
+        }
+    }
+}

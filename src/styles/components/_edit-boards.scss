@@ -1,0 +1,27 @@
+@use '../utils' as *;
+
+.edit-boards {
+    &__header {
+        @include flex($justify: space-between);
+        margin-bottom: 2rem;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+
+    &__columns {
+        @include flex($direction: column, $align: stretch);
+        gap: 1rem;
+
+
+        > div {
+            @include flex();
+            gap: .5rem;
+
+            .form-group {
+                flex: 1 1 0;
+            }
+        }
+
+    }
+}

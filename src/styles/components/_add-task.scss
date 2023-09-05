@@ -1,0 +1,43 @@
+@use '../utils' as *;
+
+.add-task {
+
+
+    &__header {
+        @include flex($justify: space-between);
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    &__close {
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+    .subtasks {
+        @include flex($direction: column, $align: stretch);
+        gap: 1rem;
+
+        > div {
+            @include flex();
+            gap: .5rem;
+
+            .form-group {
+                flex: 1 1 0;
+            }
+        }
+    }
+
+    .button {
+        margin-top: 1rem;
+    }
+
+    @media screen and (min-width:40rem) {}
+
+}

@@ -1,0 +1,139 @@
+@use '../utils' as *;
+
+.sidebar {
+    display: none;
+    position: fixed;
+    min-width: 18rem;
+    height: 100%;
+    background: $dark-purple;
+    border-right: 1px solid rgba(204, 204, 204, 0.267);
+    transition: transform .2s .3s ease-in-out;
+    transform: translateX(0%);
+    transform-origin: left;
+    z-index: 2;
+
+    &.hide {
+        transform: translateX(-100%);
+
+        > * {
+            opacity: 0;
+            transition: opacity .2s .3s ease-in-out;
+        }
+        
+    }
+
+    > * {
+        transition: opacity .2s ease-in-out;
+    }
+
+
+    &__boards {
+        margin-top: 1rem;
+
+        h1 {
+            padding: 0rem 2rem 0rem 1.5rem;
+            font-weight: 500;
+            color: $gray-blue;
+            letter-spacing: 1px;
+            font-size: .9rem;
+        }
+
+
+        .boards-list {
+            text-transform: capitalize;
+            margin-top: 1rem;
+
+            @include flex($direction: column, $align: stretch);
+            gap: .5rem 0rem;
+
+            &__option {
+                @include flex();
+                gap: 0rem 1rem;
+                padding: .7rem 1rem .7rem 1.5rem;
+                font-weight: 600;
+                color: $gray-blue;
+                margin-right: 2rem;
+                border-radius: 0rem 5rem 5rem 0rem;
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+
+                &:hover {
+                    color: white;
+                    background: hsla(242, 39%, 57%, 0.507);
+                }
+
+                svg {
+                    width: 1.3rem;
+                    height: 1.3rem;
+                }
+
+                &.active {
+                    background: $light-purple;
+                    color: $white;
+                }
+            }
+        }
+
+    }
+
+
+    .create-new {
+        padding: 1rem 2rem 0rem 1.5rem;
+        color: $light-purple;
+        gap: 0rem .3rem;
+        font-size: .9rem;
+        transition: all .2s ease-in-out;
+        &:hover {
+            color: hsl(242, 61%, 76%);
+        }
+
+
+        > svg {
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+
+        span {
+            @include flex();
+
+        }
+    }
+
+    .toggles {
+        margin-top: auto;
+        margin-bottom: 8rem;
+
+        &__theme {
+            @include flex($justify: center);
+            border-radius: .5rem;
+            gap: 0rem 1.5rem;
+            background: $darker-purple;
+            padding: .8rem;
+            margin: 1rem;
+            color: $gray-blue;
+
+            i {
+                svg {
+                    stroke-width: .5px;
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }
+            }
+        }
+
+        &__hide {
+            @include flex();
+            gap: 1rem;
+            padding: 1rem;
+            font-weight: 600;
+            font-size: .9rem;
+        }
+
+
+    }
+
+    @media screen and (min-width:48rem) {
+        display: flex;
+        @include flex($direction: column, $align: stretch);
+    }
+}

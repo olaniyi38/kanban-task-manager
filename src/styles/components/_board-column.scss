@@ -1,0 +1,56 @@
+@use '../utils' as *;
+
+.board-column {
+    min-width: 18.75rem;
+
+    &__title {
+        @include flex();
+        gap: 0rem .5rem;
+        text-transform: uppercase;
+        color: $gray-blue;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        font-size: .85rem;
+    }
+
+    &.empty {
+        .board-column__tasks {
+            border: 2px dashed rgba(128, 128, 128, 0.767);
+            border-radius: .5rem;
+        }
+    }
+
+
+    .tag-color {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 100%;
+        background: $orange;
+
+
+        &.todo {
+            background: rgb(3, 217, 224);
+
+        }
+
+        &.doing {
+            background: $light-purple;
+        }
+
+        &.done {
+            background: $cyan;
+        }
+    }
+
+
+
+    &__tasks {
+        min-height: 50vh;
+        @include flex($direction: column, $align: stretch);
+        flex-basis: 20rem;
+        gap: 1rem 0rem;
+        border-radius: .5rem;
+     
+    }
+
+}

@@ -1,0 +1,23 @@
+@use '../utils' as *;
+
+.delete-modal {
+    &__title {
+        color: $red;
+        font-weight: 600;
+    }
+
+    p {
+        color: $gray-blue;
+        font-size: .9rem;
+        margin-bottom: .5rem;
+    }
+
+    &__actions {
+        @include flex($justify: space-between);
+        gap: 1rem;
+
+        .button {
+            flex: 1 1 0;
+        }
+    }
+}

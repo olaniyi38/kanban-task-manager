@@ -1,0 +1,174 @@
+@use 'utils' as *;
+@use 'base';
+@use 'layout';
+@use 'components';
+@use 'pages';
+
+
+body {
+    background: $darker-purple;
+    color: $white;
+    overflow-x: hidden;
+}
+
+main {
+    height: 100%;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-wrapper {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.342);
+    display: grid;
+    place-items: center;
+    z-index: 7;
+}
+
+.modal {
+    @include fadeIn;
+    z-index: 3;
+    background: $dark-purple;
+    position: fixed;
+    max-width: 30rem;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    padding: 2rem 1rem;
+    max-width: 30rem;
+    color: $white;
+    @include flex($direction: column, $align: stretch);
+    gap: 1rem 0rem;
+    border-radius: 1rem;
+    overflow: auto;
+
+
+    @media screen and (min-width:48rem) {
+        min-width: 32rem;
+        padding: 2rem;
+        margin: 2rem 0rem;
+
+        &--h-auto {
+            inset: auto;
+
+        }
+    }
+}
+
+.iconLg {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.szh-menu {
+    background: $dark-purple;
+    color: $white;
+    font-weight: 500;
+    padding: 0;
+    border-radius: .5rem;
+    box-shadow: 0px 0px 20px -15px rgb(0, 0, 0);
+
+    &__item {
+        &:hover {
+            background: $white;
+            color: $darker-purple;
+        }
+
+        &.delete {
+            color: $red;
+        }
+    }
+
+}
+
+
+
+.form {
+    @include flex($direction: column, $align: stretch);
+    gap: 1rem;
+}
+
+
+.scroll-container {
+    position: relative;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+        appearance: none;
+        width: .5rem;
+        height: .5rem;
+        transition: width .2s ease-in-out;
+
+        &:hover {
+            width: .8rem;
+        }
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $light-purple;
+        border-radius: .5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $dark-purple;
+        border-radius: .5rem;
+    }
+
+    &::-webkit-scrollbar-corner {
+        background: $darker-purple;
+    }
+
+    &:has(.sidebar.hide) {
+        .board-container {
+            left: 0;
+        }
+
+        .show-sidebar {
+            transition: opacity .3s .5s ease-in-out;
+            opacity: 1;
+
+        }
+    }
+
+    .show-sidebar {
+        bottom: 10rem;
+        left: -18rem;
+        z-index: 4;
+        position: fixed;
+        background: $light-purple;
+        border-radius: 0rem 5rem 5rem 0rem;
+        width: 3rem;
+        height: 3rem;
+        padding-right: 1rem;
+        transition: opacity .3s ease-in-out;
+        opacity: 0;
+        transform: translateX(18rem);
+
+        &:hover {
+            color: $light-purple;
+            background: $white;
+        }
+
+        svg {
+            display: block;
+            margin-left: auto;
+            width: 1.7rem;
+            height: 1.7rem;
+        }
+    }
+
+    transition: transform .3s .4s ease-in-out;
+
+    @media screen and (min-width:48rem) {
+        // display: grid;
+        // grid-template-columns: 18rem 1fr;
+
+    }
+}

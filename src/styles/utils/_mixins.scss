@@ -1,0 +1,17 @@
+@mixin flex($direction: row, $align: center, $justify: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin fadeIn {
+    animation: fade-in .3s forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(.5);
+    }
+}

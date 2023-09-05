@@ -1,0 +1,49 @@
+@use '../utils' as *;
+
+
+@mixin inverted {
+    background: $white;
+    color: $light-purple;
+}
+
+@mixin delete {
+    background: $red;
+    color: $white;
+}
+
+.button {
+    @include flex($justify: center);
+    gap: 0rem .3rem;
+    background: $light-purple;
+    padding: .5rem 0rem;
+    border-radius: .3rem;
+    font-size: .9rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        @include inverted();
+    }
+
+    &--inverted {
+        @include inverted();
+
+        &:hover {
+            background: $light-purple;
+            color: $white;
+        }
+    }
+
+    &--delete {
+        @include delete();
+
+        &:hover {
+            background: rgb(207, 28, 28);
+            color: $white;
+        }
+    }
+
+
+
+}

@@ -1,0 +1,99 @@
+@use '../utils' as *;
+
+.form-group {
+    @include flex($direction: column, $align: stretch);
+    gap: .5rem 0rem;
+
+
+    input[type="text"],
+    select,
+    textarea {
+        position: relative;
+        background: $dark-purple;
+        outline: none;
+        border: 2px solid hsla(216, 15%, 57%, 0.521);
+        padding: .5rem;
+        border-radius: .3rem;
+        transition: all .3s ease-in-out;
+
+        &:focus {
+            border: 2px solid $light-purple;
+        }
+    }
+
+
+
+    select {
+        -webkit-appearance: none;
+        appearance: none;
+
+
+    }
+
+    &__label {
+        text-transform: capitalize;
+        font-size: .8rem;
+        font-weight: 600;
+    }
+
+
+    &.checkbox {
+        margin-bottom: .5rem;
+
+        * {
+            cursor: pointer;
+        }
+
+        &:has(input:checked) {
+            .form-group__label {
+                text-decoration: line-through;
+                color: gray
+            }
+
+            .check {
+                svg {
+                    transform: scale(1);
+                }
+
+                background: $light-purple
+            }
+        }
+
+        .form-group__label {
+            @include flex();
+            gap: 1rem;
+            font-size: .9rem;
+            background: $darker-purple;
+            padding: .5rem;
+            border-radius: .5rem;
+            transition: all .2s ease-in-out;
+
+        }
+
+        input {
+            appearance: none;
+            display: none;
+        }
+
+        .check {
+            display: grid;
+            place-items: center;
+            width: 1.2rem;
+            height: 1.2rem;
+            border: 1px solid gray;
+            border-radius: .2rem;
+            transition: all .2s ease-in-out;
+            stroke-width: 1px;
+            color: white;
+            z-index: 3;
+            transition: all .2s ease-in-out;
+
+            svg {
+                transition: all .2s ease-in-out;
+                transform: scale(0);
+            }
+
+
+        }
+    }
+}

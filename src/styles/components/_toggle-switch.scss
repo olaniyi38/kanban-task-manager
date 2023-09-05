@@ -1,0 +1,31 @@
+@use '../utils' as *;
+
+.toggle-switch {
+    width: 2.5rem;
+    height: 1.5rem;
+    background: $light-purple;
+    border-radius: 2rem;
+    transition: all .3s ease-in-out;
+    padding: .2rem;
+
+
+    &__thumb {
+        background: white;
+        height: 100%;
+        width: 50%;
+        border-radius: 100%;
+        transform: translateX(0%);
+        transition: all .3s ease-in-out;
+
+    }
+
+    &.active {
+        background: $white;
+
+        .toggle-switch__thumb {
+            transform: translateX(100%);
+            background: $light-purple;
+
+        }
+    }
+}
