@@ -46,7 +46,8 @@ const Header = () => {
 
 				<div className="header__actions">
 					<button
-						onClick={() => board && openModal(MODAL_TYPES.addTask)}
+						disabled={Boolean(board)}
+						onClick={() => openModal(MODAL_TYPES.addTask)}
 						className="header__add-board"
 					>
 						<AiOutlinePlus />
@@ -62,11 +63,15 @@ const Header = () => {
 							transition
 							gap={30}
 						>
-							<MenuItem onClick={() => openModal(MODAL_TYPES.editBoard)}>
+							<MenuItem
+								disabled={Boolean(board)}
+								onClick={() => openModal(MODAL_TYPES.editBoard)}
+							>
 								Edit Board
 							</MenuItem>
 							<MenuDivider />
 							<MenuItem
+								disabled={Boolean(board)}
 								onClick={() => openModal(MODAL_TYPES.deleteBoard)}
 								className="delete"
 							>
