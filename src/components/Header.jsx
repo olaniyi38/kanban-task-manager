@@ -17,7 +17,7 @@ import { MenuItem } from "@szhsin/react-menu";
 import { MenuDivider } from "@szhsin/react-menu";
 import { MenuButton } from "@szhsin/react-menu";
 
-const boards = ["Board1","Board2"]
+const boards = ["Board1", "Board2"];
 
 const Header = () => {
 	const dispatch = useDispatch();
@@ -46,7 +46,7 @@ const Header = () => {
 
 				<div className="header__actions">
 					<button
-						onClick={() => openModal(MODAL_TYPES.addTask)}
+						onClick={() => board && openModal(MODAL_TYPES.addTask)}
 						className="header__add-board"
 					>
 						<AiOutlinePlus />
@@ -80,7 +80,6 @@ const Header = () => {
 			{isBoardsModalActive && (
 				<BoardsModal boards={boards} toggleFunc={setBoardsModalActive} />
 			)}
-
 		</>
 	);
 };
