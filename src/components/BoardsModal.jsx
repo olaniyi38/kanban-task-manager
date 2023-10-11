@@ -18,7 +18,7 @@ const BoardsModal = ({ toggleFunc }) => {
 
 	const BoardsList = boards.map((b, i) => {
 		return (
-			<div
+			<div key={b.id}
 				onClick={() => dispatch(changeBoard(b.id))}
 				className={`board-select__option ${
 					b.id === currentBoardId ? "active" : ""

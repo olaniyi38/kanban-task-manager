@@ -5,6 +5,9 @@
   background: $dark-purple;
   border-bottom: 1px solid rgba(204, 204, 204, 0.267);
 
+  button:disabled {
+    background: gray;
+  }
 
   &__title {
     flex: none;
@@ -14,6 +17,12 @@
     border-right: 1px solid rgba(204, 204, 204, 0.267);
     padding: 1.5rem 1rem;
     max-width: 18rem;
+    display: none;
+
+    @media screen and (min-width:32rem) {
+      display: block;
+      width: 10rem;
+    }
 
     // flex: 1 1 0;
 
@@ -25,13 +34,12 @@
     font-weight: 700;
     text-transform: capitalize;
     position: relative;
-    padding: 0rem 2rem;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 
     i {
-      position: absolute;
-      bottom: .3rem;
-      right: -1.3rem;
-
       svg {
         stroke-width: 1.1px;
         width: .9rem;
@@ -49,8 +57,8 @@
 
 
     svg {
-      width: 1.3rem;
-      height: 1.3rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
 
   }
@@ -70,10 +78,12 @@
 
   }
 
+
   @media screen and (min-width:48rem) {
     &__title {
       font-size: 1.4rem;
       width: 18rem;
+
 
     }
 
@@ -90,6 +100,7 @@
       font-size: .9rem;
       padding: .5rem 1rem;
       @include flex();
+
       gap: 0rem .3rem;
 
       span {

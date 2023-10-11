@@ -7,19 +7,19 @@ import { MODAL_TYPES, setModalType } from "../features/modal/modalSlice";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { useRef } from "react";
+import { useDragControls } from "framer-motion";
+import ScrollContainer from "react-indiana-drag-scroll";
 
 const Board = () => {
 	const board = useSelector(selectCurrentBoard);
 	const dispactch = useDispatch();
-	const dragContainerRef = useRef();
+	
+	
 
 	return (
-		<section ref={dragContainerRef} className="board-container">
+		<section className="board-container">
 			{board ? (
-				<div
-					key={board.name}
-					className="board"
-				>
+				<motion.div key={board.name} className="board">
 					<div className="board__columns">
 						<AnimatePresence>
 							{board.columns.map((data) => (
@@ -46,7 +46,7 @@ const Board = () => {
 							</div>
 						</motion.div>
 					</div>
-				</div>
+				</motion.div>
 			) : (
 				<div className="empty">
 					<h1>No Boards Here ...</h1>

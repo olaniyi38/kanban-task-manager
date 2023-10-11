@@ -5,6 +5,7 @@ import Providers from "./features/Providers.jsx";
 
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
+import 'react-indiana-drag-scroll/dist/style.css';
 import "./styles/main.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

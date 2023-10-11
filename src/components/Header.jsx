@@ -37,16 +37,20 @@ const Header = () => {
 			<header className="header">
 				<h1 className="header__title">kanban</h1>
 
-				<span className="header__board-name" onClick={toggleBoardsModal}>
-					{board && board.name}
-					<i>
-						<BsChevronDown />
-					</i>
-				</span>
+				<p className="header__board-name" onClick={toggleBoardsModal}>
+					{board && (
+						<>
+							{board.name}
+							<i>
+								<BsChevronDown />
+							</i>
+						</>
+					)}
+				</p>
 
 				<div className="header__actions">
 					<button
-						disabled={Boolean(board)}
+						disabled={Boolean(!board)}
 						onClick={() => openModal(MODAL_TYPES.addTask)}
 						className="header__add-board"
 					>
@@ -64,14 +68,14 @@ const Header = () => {
 							gap={30}
 						>
 							<MenuItem
-								disabled={Boolean(board)}
+								disabled={Boolean(!board)}
 								onClick={() => openModal(MODAL_TYPES.editBoard)}
 							>
 								Edit Board
 							</MenuItem>
 							<MenuDivider />
 							<MenuItem
-								disabled={Boolean(board)}
+								disabled={Boolean(!board)}
 								onClick={() => openModal(MODAL_TYPES.deleteBoard)}
 								className="delete"
 							>
