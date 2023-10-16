@@ -8,7 +8,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { BsThreeDotsVertical, BsChevronDown } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 
-import BoardsModal from "./BoardsModal";
+import BoardsNavModal from "./BoardsNavModal";
 import TaskModal from "./TaskModal";
 import { MODAL_TYPES, setModalType } from "../features/modal/modalSlice";
 import EditTaskModal from "./EditTaskModal";
@@ -87,7 +87,7 @@ const Header = () => {
 			</header>
 
 			{isBoardsModalActive && (
-				<BoardsModal boards={boards} toggleFunc={setBoardsModalActive} />
+				<BoardsNavModal boards={boards} toggleFunc={setBoardsModalActive} />
 			)}
 		</>
 	);

@@ -16,9 +16,12 @@ const AddTaskModal = () => {
 			<div className="modal add-task">
 				<header className="add-task__header">
 					<h1 className="add-task__title">Add new task</h1>
-					{/* <button className="add-task__close" onClick={closeModal}>
+					<button
+						className="add-task__close"
+						onClick={() => dispatch(setModalType(""))}
+					>
 						<RxCross2 />
-					</button> */}
+					</button>
 				</header>
 				<div className="container">
 					<TaskForm dispatchAction={addTask} />

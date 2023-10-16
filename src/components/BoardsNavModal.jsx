@@ -10,7 +10,7 @@ import {
 import { changeBoard } from "../features/boards/boardsSlice";
 import { MODAL_TYPES, setModalType } from "../features/modal/modalSlice";
 
-const BoardsModal = ({ toggleFunc }) => {
+const BoardsNavModal = ({ toggleFunc }) => {
 	const boards = useSelector(selectBoards);
 	const currentBoardId = useSelector(selectCurrentBoardId);
 	const dispatch = useDispatch();
@@ -58,4 +58,4 @@ const BoardsModal = ({ toggleFunc }) => {
 	);
 };
 
-export default BoardsModal;
+export default BoardsNavModal;

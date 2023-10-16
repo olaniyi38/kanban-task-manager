@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import useSomething from "../hooks/useSomething";
+
 import { useForm } from "react-hook-form";
+import useInputArray from "../hooks/useInputArray";
 
 import FormInput from "./FormInput";
 import Select from "./Select";
@@ -17,7 +18,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const TaskForm = ({ dispatchAction, taskId = null, incomingValues = null }) => {
 	const dispatch = useDispatch();
 	const { data, resetData, removeItem, addItem, onDataChange, setInitialData } =
-		useSomething();
+		useInputArray();
 	const { register, handleSubmit, reset, formState } = useForm({
 		defaultValues: {
 			description: incomingValues ? incomingValues.description : "",
@@ -87,7 +88,7 @@ const TaskForm = ({ dispatchAction, taskId = null, incomingValues = null }) => {
 							<motion.div
 								initial={{ opacity: 0, scale: 0.8 }}
 								animate={{ opacity: 1, scale: 1 }}
-								exit={{ opacity: 0, scale: 0.8 }}
+								transition={{ duration: 0.3 }}
 								layout
 								key={s.id}
 							>

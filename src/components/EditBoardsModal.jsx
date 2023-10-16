@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addBoard, editBoard } from "../features/boards/boardsSlice";
 import { useEffect } from "react";
 import { MODAL_TYPES, setModalType } from "../features/modal/modalSlice";
-import useSomething from "../hooks/useSomething";
+import useInputArray from "../hooks/useInputArray";
 import { selectCurrentBoard } from "../features/boards/boardSelector";
 
 import { motion } from "framer-motion";
@@ -19,8 +19,8 @@ const EditBoardsModal = ({ type }) => {
 	const { register, formState, reset, handleSubmit, setValue } = useForm();
 	const errors = formState.errors;
 
-	const { data, addItem, removeItem, onDataChange, resetData, setInitialData } =
-		useSomething();
+	const { data, addItem, removeItem, onDataChange, setInitialData } =
+		useInputArray();
 
 	const title =
 		type === MODAL_TYPES.addBoard ? "create new board" : "edit board";
@@ -90,7 +90,7 @@ const EditBoardsModal = ({ type }) => {
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
-								layout
+								transition={{ duration: 0.1 }}
 								key={id}
 							>
 								<FormInput

@@ -11,7 +11,7 @@ const BoardColumn = ({ tasks, status, colId }) => {
 		<Droppable
 			key={colId}
 			droppableId={colId.toString()}
-			isCombineEnabled={true}
+			
 		>
 			{(provided, snapshot) => (
 				<motion.div

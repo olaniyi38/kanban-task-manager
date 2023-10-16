@@ -1,9 +1,12 @@
 import { useCallback } from "react";
 import { useState } from "react";
 
-const useSomething = () => {
+//manages an array of data from multiple input elements
+const useInputArray = () => {
 	const [data, setData] = useState([]);
 
+	//maps a initial data from given data, takes a valueField to serve as the key for the initial data values
+	//e.g init Data = [{name:"john"},{name:"doe"}]...valueField is "name"
 	const setInitialData = useCallback(
 		(initData, valueField) => {
 			setData(
@@ -56,4 +59,4 @@ const useSomething = () => {
 	return { data, addItem, removeItem, onDataChange, resetData, setInitialData };
 };
 
-export default useSomething;
+export default useInputArray;

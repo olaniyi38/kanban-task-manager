@@ -9,20 +9,26 @@ import { AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { useDragControls } from "framer-motion";
 import ScrollContainer from "react-indiana-drag-scroll";
+import { useEffect } from "react";
 
 const Board = () => {
-	const board = useSelector(selectCurrentBoard);
+	const currentBoard = useSelector(selectCurrentBoard);
 	const dispactch = useDispatch();
 	
-	
-
+	useEffect(() => {
+		console.log("first");
+		window.scrollTo({
+		  behavior: "smooth",
+		  left: 0,
+		});
+	  }, [currentBoard]);
 	return (
 		<section className="board-container">
-			{board ? (
-				<motion.div key={board.name} className="board">
+			{currentBoard ? (
+				<motion.div key={currentBoard.name} className="board">
 					<div className="board__columns">
 						<AnimatePresence>
-							{board.columns.map((data) => (
+							{currentBoard.columns.map((data) => (
 								<BoardColumn
 									key={data.id}
 									colId={data.id}
