@@ -34,7 +34,6 @@ const EditBoardsModal = ({ type }) => {
 	});
 
 	function close(e) {
-		if (e.target !== e.currentTarget) return;
 		dispatch(setModalType(""));
 	}
 
@@ -69,7 +68,7 @@ const EditBoardsModal = ({ type }) => {
 	}
 
 	return (
-		<div className="modal-wrapper" onClick={close}>
+		<div className="modal-wrapper" >
 			<div className="edit-boards modal modal--h-auto">
 				<header className="edit-boards__header">
 					<h1>{title}</h1>
@@ -103,7 +102,7 @@ const EditBoardsModal = ({ type }) => {
 									}}
 								/>
 								<button onClick={() => removeItem(id)}>
-									<RxCross2 className="iconLg" />
+									<RxCross2 className="iconLg icn-cross" />
 								</button>
 							</motion.div>
 						))}
@@ -113,7 +112,7 @@ const EditBoardsModal = ({ type }) => {
 						inverted
 						text={"add new column"}
 						onClick={addItem}
-						svgEl={<AiOutlinePlus />}
+						svgEl={<AiOutlinePlus className="icn-plus"/>}
 					/>
 				</div>
 

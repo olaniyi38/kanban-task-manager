@@ -30,16 +30,14 @@
             height: 70vh;
             display: grid;
             place-items: center;
-            background: $dark-purple;
-            background: rgb(43, 44, 54);
-            background: linear-gradient(180deg, rgba(43, 44, 54, 1) 60%, rgba(5, 5, 5, 0.1) 100%);
+            background: linear-gradient(180deg, var(--bg-secondary) 60%, rgba(5, 5, 5, 0.1) 100%);
             color: $gray-blue;
             margin-top: 2rem;
             border-radius: 1rem;
             transition: all .2s ease-in-out;
 
             &:hover {
-                color: $white;
+                color: var(--font-main);
                 cursor: pointer
             }
 
@@ -63,9 +61,5 @@
 
     @media screen and (min-width:48rem) {
         left: 18rem;
-
-        
-        
-
     }
 }

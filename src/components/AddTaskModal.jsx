@@ -7,12 +7,8 @@ import { setModalType } from "../features/modal/modalSlice";
 const AddTaskModal = () => {
 	const dispatch = useDispatch();
 
-	function closeModal(e) {
-		if (e.target !== e.currentTarget) return;
-		dispatch(setModalType(""));
-	}
 	return (
-		<div className="modal-wrapper" onClick={closeModal}>
+		<div className="modal-wrapper">
 			<div className="modal add-task">
 				<header className="add-task__header">
 					<h1 className="add-task__title">Add new task</h1>

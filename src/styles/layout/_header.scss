@@ -2,7 +2,7 @@
 
 .header {
   @include flex();
-  background: $dark-purple;
+  background: var(--bg-secondary);
   border-bottom: 1px solid rgba(204, 204, 204, 0.267);
 
   button:disabled {
@@ -67,6 +67,7 @@
     background: $light-purple;
     padding: .2rem .5rem;
     border-radius: .5rem;
+    color: $white;
 
     span {
       display: none;

@@ -6,8 +6,12 @@
         margin-bottom: 2rem;
         font-weight: 600;
         text-transform: capitalize;
+        color: var(--font-main);
     }
-
+    .icn-cross{
+        color: var(--font-main)
+    }
+    
 
     &__columns {
         @include flex($direction: column, $align: stretch);
@@ -21,6 +25,7 @@
             .form-group {
                 flex: 1 1 0;
             }
+            
         }
 
     }

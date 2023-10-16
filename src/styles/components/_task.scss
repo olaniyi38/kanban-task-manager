@@ -1,7 +1,7 @@
 @use '../utils' as *;
 
 .task {
-    background: $dark-purple;
+    background: var(--bg-secondary);
     padding: 1.5rem;
     border-radius: .5rem;
     @include flex($direction: column, $align: stretch);

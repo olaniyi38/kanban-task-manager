@@ -5,7 +5,8 @@
     position: fixed;
     min-width: 18rem;
     height: 100%;
-    background: $dark-purple;
+    background: var(--bg-secondary);
+    color: var(--font-main);
     border-right: 1px solid rgba(204, 204, 204, 0.267);
     transition: transform .2s .3s ease-in-out;
     transform: translateX(0%);
@@ -86,14 +87,15 @@
         &:hover {
             color: hsl(242, 61%, 76%);
         }
-
+        
 
         > svg {
             width: 1.3rem;
             height: 1.3rem;
         }
-
+        
         span {
+            font-weight: 600;
             @include flex();
 
         }
@@ -107,7 +109,7 @@
             @include flex($justify: center);
             border-radius: .5rem;
             gap: 0rem 1.5rem;
-            background: $darker-purple;
+            background: var(--bg-main);
             padding: .8rem;
             margin: 1rem;
             color: $gray-blue;
@@ -117,6 +119,7 @@
                     stroke-width: .5px;
                     width: 1.2rem;
                     height: 1.2rem;
+                    
                 }
             }
         }

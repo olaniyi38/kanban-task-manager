@@ -5,9 +5,21 @@
 @use 'pages';
 
 
+html {
+    --font-main:#{$white};
+    --bg-main:#{$darker-purple};
+    --bg-secondary:#{$dark-purple};
+}
+
+[data-theme="dark"] {
+    --font-main:#{$black};
+    --bg-main:#{$white2};
+    --bg-secondary:#{$white};
+}
+
 body {
-    background: $darker-purple;
-    color: $white;
+    background: var(--bg-main);
+    color: var(--font-main);
     overflow-x: hidden;
 }
 
@@ -49,7 +61,7 @@ main {
 .modal {
     @include fadeIn;
     z-index: 3;
-    background: $dark-purple;
+    background: var(--bg-secondary);
     position: fixed;
     max-width: 30rem;
     width: 90%;
@@ -111,8 +123,8 @@ main {
 }
 
 .szh-menu {
-    background: $dark-purple;
-    color: $white;
+    background: var(--bg-secondary);
+    color: var(--font-main);
     font-weight: 500;
     padding: 0;
     border-radius: .5rem;

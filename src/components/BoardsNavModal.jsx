@@ -18,7 +18,8 @@ const BoardsNavModal = ({ toggleFunc }) => {
 
 	const BoardsList = boards.map((b, i) => {
 		return (
-			<div key={b.id}
+			<div
+				key={b.id}
 				onClick={() => dispatch(changeBoard(b.id))}
 				className={`board-select__option ${
 					b.id === currentBoardId ? "active" : ""
@@ -30,8 +31,13 @@ const BoardsNavModal = ({ toggleFunc }) => {
 		);
 	});
 
+	function closeModal(e) {
+		if (e.target !== e.currentTarget) return;
+		toggleFunc(false);
+	}
+
 	return (
-		<div className="modal-wrapper" onClick={() => toggleFunc(false)}>
+		<div className="modal-wrapper" onClick={closeModal}>
 			<div className="boards-modal modal">
 				<div className="board-select">
 					<h1>All boards ({len})</h1>

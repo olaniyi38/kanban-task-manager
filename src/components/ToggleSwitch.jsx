@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
-const ToggleSwitch = ({ func = () => {} }) => {
+const ToggleSwitch = ({ onClick = () => {} }) => {
 	const [isActive, setIsActive] = useState(false);
 
 	function onClickHandler() {
 		setIsActive(!isActive);
-		func();
+		onClick();
 	}
 
 	return (

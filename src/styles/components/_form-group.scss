@@ -9,7 +9,8 @@
     select,
     textarea {
         position: relative;
-        background: $dark-purple;
+        background: var(--bg-secondary);
+        color: var(--font-main);
         outline: none;
         border: 2px solid hsla(216, 15%, 57%, 0.521);
         padding: .5rem;
@@ -34,6 +35,7 @@
         text-transform: capitalize;
         font-size: .8rem;
         font-weight: 600;
+        color: var(--font-main);
     }
 
 
@@ -63,7 +65,8 @@
             @include flex();
             gap: 1rem;
             font-size: .9rem;
-            background: $darker-purple;
+            background: var(--bg-main);
+            color: var(--font-main);
             padding: .5rem;
             border-radius: .5rem;
             transition: all .2s ease-in-out;

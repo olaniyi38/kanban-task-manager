@@ -100,7 +100,7 @@ const TaskForm = ({ dispatchAction, taskId = null, incomingValues = null }) => {
 									onChange={(e) => onDataChange(e, s.id)}
 								/>
 								<button onClick={() => removeItem(s.id)}>
-									<RxCross2 className="iconLg" />
+									<RxCross2 className="iconLg icn-cross" />
 								</button>
 							</motion.div>
 						))}

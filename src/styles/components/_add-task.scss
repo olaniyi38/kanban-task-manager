@@ -6,6 +6,7 @@
     &__header {
         @include flex($justify: space-between);
         margin-bottom: 2rem;
+        color: var(--font-main);
     }
 
     &__title {
@@ -31,6 +32,10 @@
             .form-group {
                 flex: 1 1 0;
             }
+        }
+
+        .icn-cross {
+            color: var(--font-main);
         }
     }
 

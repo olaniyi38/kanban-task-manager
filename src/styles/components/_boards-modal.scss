@@ -67,7 +67,7 @@
     @include flex($justify: center);
     border-radius: .5rem;
     gap: 0rem 1.5rem;
-    background: $darker-purple;
+    background: var(--bg-main);
     padding: .5rem;
     margin: 1rem;
 
@@ -76,6 +76,7 @@
             stroke-width: .5px;
             width: 1.2rem;
             height: 1.2rem;
+            color: $gray-blue;
         }
     }
 

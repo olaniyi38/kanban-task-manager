@@ -11,13 +11,9 @@ const EditTaskModal = () => {
 
 	const dispatch = useDispatch();
 
-	function closeModal(e) {
-		if (e.target !== e.currentTarget) return;
-		dispatch(setModalType(""));
-	}
 
 	return (
-		<div className="modal-wrapper" onClick={closeModal}>
+		<div className="modal-wrapper" >
 			<motion.div
 				initial={{ opacity: 0, scale: 0.5 }}
 				animate={{ opacity: 1, scale: 1 }}
