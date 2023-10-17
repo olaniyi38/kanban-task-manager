@@ -1,5 +1,3 @@
-
-
 const Select = ({
 	options = [],
 	defaultOption,
@@ -7,19 +5,18 @@ const Select = ({
 	name,
 	register,
 	errors,
-	onChangeHandler = () => {}
+	onChangeHandler = () => {},
 }) => {
 	return (
 		<div className="form-group select">
 			<label className="form-group__label">{label}</label>
-			<select { ...register && register(name, { required: true })} onChange={onChangeHandler}>
-				{defaultOption && (
-					<option value={defaultOption}>{defaultOption}</option>
-				)}
+			<select
+				{...(register && register(name, { required: true }))}
+				onChange={onChangeHandler}
+			>
 				{options.map((o) => {
-					if (o === defaultOption) return;
 					return (
-						<option key={o} value={o}>
+						<option key={o} value={o} selected={o === defaultOption}>
 							{o}
 						</option>
 					);

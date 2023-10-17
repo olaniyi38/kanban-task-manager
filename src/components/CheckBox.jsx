@@ -1,16 +1,13 @@
-import  { AiOutlineCheck } from 'react-icons/ai'
+import { AiOutlineCheck } from "react-icons/ai";
 
 const CheckBox = ({ label, name, ...inputProps }) => {
 	return (
 		<div className="form-group checkbox">
 			<label className="form-group__label">
-		        <span className="check">
+				<span className="check">
 					<AiOutlineCheck />
 				</span>
-				<input
-					type="checkbox"
-					{...inputProps}
-				/>
+				<input type="checkbox" {...inputProps} />
 				{label}
 			</label>
 		</div>

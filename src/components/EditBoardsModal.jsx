@@ -68,7 +68,7 @@ const EditBoardsModal = ({ type }) => {
 	}
 
 	return (
-		<div className="modal-wrapper" >
+		<div className="modal-wrapper">
 			<div className="edit-boards modal modal--h-auto">
 				<header className="edit-boards__header">
 					<h1>{title}</h1>
@@ -112,7 +112,7 @@ const EditBoardsModal = ({ type }) => {
 						inverted
 						text={"add new column"}
 						onClick={addItem}
-						svgEl={<AiOutlinePlus className="icn-plus"/>}
+						svgEl={<AiOutlinePlus className="icn-plus" />}
 					/>
 				</div>
 

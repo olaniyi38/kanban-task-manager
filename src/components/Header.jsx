@@ -1,23 +1,13 @@
 import { useState } from "react";
-import {
-	selectCurrentBoard,
-	selectCurrentTaskData,
-} from "../features/boards/boardSelector";
+import { selectCurrentBoard } from "../features/boards/boardSelector";
 
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsThreeDotsVertical, BsChevronDown } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 
 import BoardsNavModal from "./BoardsNavModal";
-import TaskModal from "./TaskModal";
 import { MODAL_TYPES, setModalType } from "../features/modal/modalSlice";
-import EditTaskModal from "./EditTaskModal";
-import { Menu } from "@szhsin/react-menu";
-import { MenuItem } from "@szhsin/react-menu";
-import { MenuDivider } from "@szhsin/react-menu";
-import { MenuButton } from "@szhsin/react-menu";
-
-const boards = ["Board1", "Board2"];
+import { Menu, MenuItem, MenuDivider, MenuButton } from "@szhsin/react-menu";
 
 const Header = () => {
 	const dispatch = useDispatch();
@@ -37,13 +27,13 @@ const Header = () => {
 			<header className="header">
 				<h1 className="header__title">kanban</h1>
 
-				<p className="header__board-name" onClick={toggleBoardsModal}>
+				<p className="header__board-name">
 					{board && (
 						<>
 							{board.name}
-							<i>
+							<button className="toggle-nav" onClick={toggleBoardsModal}>
 								<BsChevronDown />
-							</i>
+							</button>
 						</>
 					)}
 				</p>
@@ -87,7 +77,7 @@ const Header = () => {
 			</header>
 
 			{isBoardsModalActive && (
-				<BoardsNavModal boards={boards} toggleFunc={setBoardsModalActive} />
+				<BoardsNavModal toggleFunc={setBoardsModalActive} />
 			)}
 		</>
 	);

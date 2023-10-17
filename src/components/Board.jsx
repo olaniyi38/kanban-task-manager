@@ -1,4 +1,3 @@
-import React from "react";
 import BoardColumn from "./BoardColumn";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentBoard } from "../features/boards/boardSelector";
@@ -6,22 +5,13 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { MODAL_TYPES, setModalType } from "../features/modal/modalSlice";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-import { useRef } from "react";
-import { useDragControls } from "framer-motion";
-import ScrollContainer from "react-indiana-drag-scroll";
-import { useEffect } from "react";
+
 
 const Board = () => {
 	const currentBoard = useSelector(selectCurrentBoard);
 	const dispactch = useDispatch();
 	
-	useEffect(() => {
-		console.log("first");
-		window.scrollTo({
-		  behavior: "smooth",
-		  left: 0,
-		});
-	  }, [currentBoard]);
+	
 	return (
 		<section className="board-container">
 			{currentBoard ? (
@@ -40,7 +30,7 @@ const Board = () => {
 						<motion.div
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
-							layout
+							
 							className="board__add-column"
 							onClick={() => {
 								dispactch(setModalType(MODAL_TYPES.editBoard));

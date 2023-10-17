@@ -17,7 +17,7 @@
             font-size: .9rem;
             padding: 0rem 2rem 0rem 1.5rem;
             font-weight: 600;
-
+            color: var(--font-main);
         }
 
         &__options {
@@ -53,34 +53,33 @@
         }
     }
 
-}
+    .create-new {
+        padding: 1rem 2rem 0rem 1.5rem;
+        color: $light-purple;
+        @include flex();
+        gap: 0rem .3rem;
 
-.create-new {
-    padding: 1rem 2rem 0rem 1.5rem;
-    color: $light-purple;
-    @include flex();
-    gap: 0rem .3rem;
-
-}
-
-.toggle-theme {
-    @include flex($justify: center);
-    border-radius: .5rem;
-    gap: 0rem 1.5rem;
-    background: var(--bg-main);
-    padding: .5rem;
-    margin: 1rem;
-
-    i {
-        svg {
-            stroke-width: .5px;
-            width: 1.2rem;
-            height: 1.2rem;
-            color: $gray-blue;
-        }
     }
 
-    @media screen and (min-width:48rem) {
-        display: none;
+    .toggle-theme {
+        @include flex($justify: center);
+        border-radius: .5rem;
+        gap: 0rem 1.5rem;
+        background: var(--bg-main);
+        padding: .5rem;
+        margin: 1rem;
+
+        i {
+            svg {
+                stroke-width: .5px;
+                width: 1.2rem;
+                height: 1.2rem;
+                color: $gray-blue;
+            }
+        }
+
+        @media screen and (min-width:48rem) {
+            display: none;
+        }
     }
 }

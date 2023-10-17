@@ -17,7 +17,7 @@ import { useState } from "react";
 import { MODAL_TYPES, setModalType } from "../features/modal/modalSlice";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import { useRef } from "react";
+import useToggleTheme from "../hooks/useToggleTheme";
 
 const Sidebar = () => {
 	const boards = useSelector(selectBoards);
@@ -25,15 +25,7 @@ const Sidebar = () => {
 	const dispatch = useDispatch();
 	const [hide, setHide] = useState(false);
 	const len = boards.length;
-	const [theme, setTheme] = useState("light");
-
-	const toggleTheme = () => {
-		theme === "light" ? setTheme("dark") : setTheme("light");
-	};
-
-	useEffect(() => {
-		document.querySelector("html").setAttribute("data-theme", theme);
-	}, [theme]);
+	const toggleTheme = useToggleTheme();
 
 	function showEditBoardsModal() {
 		dispatch(setModalType(MODAL_TYPES.addBoard));
@@ -82,7 +74,7 @@ const Sidebar = () => {
 							<BsSun />
 						</i>
 
-						<ToggleSwitch onClick={toggleTheme}  />
+						<ToggleSwitch onClick={toggleTheme} />
 
 						<i className="dark">
 							<BsMoon />

@@ -13,7 +13,7 @@
     cursor: pointer;
 
     &:hover {
-        background:$dark-purple--hover;
+        background:var(--bg-secondary--hover);
     }
 
     &__info {

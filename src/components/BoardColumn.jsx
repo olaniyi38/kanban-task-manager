@@ -29,11 +29,11 @@ const BoardColumn = ({ tasks, status, colId }) => {
 						</p>
 					</h1>
 					<div className="board-column__tasks">
-						{/* <AnimatePresence > */}
+						<AnimatePresence mode="wait">
 						{tasks.map((data, i) => (
 							<Task key={data.id} columnId={colId} data={data} index={i} />
 						))}
-						{/* </AnimatePresence> */}
+						</AnimatePresence>
 					</div>
 				</motion.div>
 			)}

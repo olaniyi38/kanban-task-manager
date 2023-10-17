@@ -26,7 +26,7 @@ const TaskModal = () => {
 	const statuses = useSelector(selectCurrentBoard).columns.map((c) => c.name);
 	const modalRef = useRef();
 
-	const { title, description, subtasks } = task;
+	const { title, description, subtasks, status } = task;
 
 	function updateSubtasks(e, title) {
 		const index = subtasks.findIndex((s) => s.title === title);
@@ -119,6 +119,7 @@ const TaskModal = () => {
 							name="columnName"
 							options={[...statuses]}
 							onChangeHandler={changeColumn}
+							defaultOption={status}
 						/>
 					</div>
 				</div>

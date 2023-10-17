@@ -1,5 +1,5 @@
 import { RxCross2 } from "react-icons/rx";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import TaskForm from "./TaskForm";
 import { addTask } from "../features/boards/boardsSlice";
 import { setModalType } from "../features/modal/modalSlice";

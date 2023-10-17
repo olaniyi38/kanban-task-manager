@@ -7,7 +7,7 @@ import EditBoardsModal from "./EditBoardsModal";
 import AddTaskModal from "./AddTaskModal";
 import TaskModal from "./TaskModal";
 
-const Modals = () => {
+const ModalsFactory = () => {
 	const modalType = useSelector((state) => state.modal.type);
 	switch (modalType) {
 		case MODAL_TYPES.editTask:
@@ -25,4 +25,4 @@ const Modals = () => {
 	}
 };
 
-export default Modals;
+export default ModalsFactory;

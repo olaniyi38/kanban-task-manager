@@ -9,12 +9,19 @@ import {
 } from "../features/boards/boardSelector";
 import { changeBoard } from "../features/boards/boardsSlice";
 import { MODAL_TYPES, setModalType } from "../features/modal/modalSlice";
+import useToggleTheme from "../hooks/useToggleTheme";
 
 const BoardsNavModal = ({ toggleFunc }) => {
 	const boards = useSelector(selectBoards);
 	const currentBoardId = useSelector(selectCurrentBoardId);
 	const dispatch = useDispatch();
 	const len = boards.length;
+	const toggleTheme = useToggleTheme();
+
+	function closeModal(e) {
+		if (e.target !== e.currentTarget) return;
+		toggleFunc(false);
+	}
 
 	const BoardsList = boards.map((b, i) => {
 		return (
@@ -31,10 +38,7 @@ const BoardsNavModal = ({ toggleFunc }) => {
 		);
 	});
 
-	function closeModal(e) {
-		if (e.target !== e.currentTarget) return;
-		toggleFunc(false);
-	}
+	
 
 	return (
 		<div className="modal-wrapper" onClick={closeModal}>
@@ -54,7 +58,7 @@ const BoardsNavModal = ({ toggleFunc }) => {
 					<i className="light">
 						<BsSun />
 					</i>
-					<ToggleSwitch />
+					<ToggleSwitch onClick={toggleTheme} />
 					<i className="dark">
 						<BsMoon />
 					</i>

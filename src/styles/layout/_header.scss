@@ -24,8 +24,6 @@
       width: 10rem;
     }
 
-    // flex: 1 1 0;
-
 
   }
 
@@ -39,7 +37,7 @@
     align-items: center;
     gap: 1rem;
 
-    i {
+    .toggle-nav {
       svg {
         stroke-width: 1.1px;
         width: .9rem;
@@ -91,7 +89,7 @@
     &__board-name {
       font-size: 1.4rem;
 
-      i {
+      .toggle-nav {
         display: none;
       }
     }

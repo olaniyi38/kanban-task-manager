@@ -9,12 +9,14 @@ html {
     --font-main:#{$white};
     --bg-main:#{$darker-purple};
     --bg-secondary:#{$dark-purple};
+    --bg-secondary--hover:#{$dark-purple--hover};
 }
 
 [data-theme="dark"] {
     --font-main:#{$black};
     --bg-main:#{$white2};
     --bg-secondary:#{$white};
+    --bg-secondary--hover:#{$white2};
 }
 
 body {
@@ -76,7 +78,7 @@ main {
     gap: 1rem 0rem;
     border-radius: 1rem;
     overflow: auto;
-
+  
 
     @media screen and (min-width:48rem) {
         min-width: 32rem;
@@ -229,6 +231,7 @@ main {
     transition: opacity .3s ease-in-out;
     opacity: 0;
     transform: translateX(18rem);
+    color: $white;
 
     &:hover {
         color: $light-purple;
