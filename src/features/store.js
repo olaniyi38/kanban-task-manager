@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import boardsSlice from "./boards/boardsSlice";
 import modalSlice from "./modal/modalSlice";
+import themeSlice from "./theme/themeSlice";
 
 
 const loggerMiddleware = (store) => (next) => (action) => {
@@ -18,7 +19,8 @@ const loggerMiddleware = (store) => (next) => (action) => {
 const store = configureStore({
     reducer: {
         boards: boardsSlice,
-        modal: modalSlice
+        modal: modalSlice,
+        theme: themeSlice
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(loggerMiddleware),

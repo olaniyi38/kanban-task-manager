@@ -34,7 +34,7 @@ const DeleteModal = ({ type }) => {
 					{isDeleteBoard ? "Delete this board?" : "Delete this task?"}
 				</h1>
 				<p>
-					Are you sure you want to delete the '{title}'{" "}
+					Are you sure you want to delete the <b>'{title}'</b>{" "}
 					{isDeleteBoard ? "board" : "task"}?
 					{isDeleteBoard &&
 						"This action will remove all columns and  tasks and cannot be reversed."}

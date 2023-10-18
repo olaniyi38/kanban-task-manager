@@ -18,10 +18,12 @@ import { MODAL_TYPES, setModalType } from "../features/modal/modalSlice";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import useToggleTheme from "../hooks/useToggleTheme";
+import { selectTheme } from "../features/theme/themeSlice";
 
 const Sidebar = () => {
 	const boards = useSelector(selectBoards);
 	const currentId = useSelector(selectCurrentBoardId);
+	const { theme } = useSelector(selectTheme);
 	const dispatch = useDispatch();
 	const [hide, setHide] = useState(false);
 	const len = boards.length;
@@ -70,14 +72,13 @@ const Sidebar = () => {
 				</div>
 				<div className="toggles">
 					<div className="toggles__theme">
-						<i className="light">
-							<BsSun />
-						</i>
-
-						<ToggleSwitch onClick={toggleTheme} />
-
 						<i className="dark">
 							<BsMoon />
+						</i>
+						<ToggleSwitch onClick={toggleTheme} isActive={theme === "light"} />
+
+						<i className="light">
+							<BsSun />
 						</i>
 					</div>
 					<button onClick={toggleSidebar} className="toggles__hide">

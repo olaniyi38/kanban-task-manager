@@ -10,10 +10,12 @@ import {
 import { changeBoard } from "../features/boards/boardsSlice";
 import { MODAL_TYPES, setModalType } from "../features/modal/modalSlice";
 import useToggleTheme from "../hooks/useToggleTheme";
+import { selectTheme } from "../features/theme/themeSlice";
 
 const BoardsNavModal = ({ toggleFunc }) => {
 	const boards = useSelector(selectBoards);
 	const currentBoardId = useSelector(selectCurrentBoardId);
+	const { theme } = useSelector(selectTheme);
 	const dispatch = useDispatch();
 	const len = boards.length;
 	const toggleTheme = useToggleTheme();
@@ -38,8 +40,6 @@ const BoardsNavModal = ({ toggleFunc }) => {
 		);
 	});
 
-	
-
 	return (
 		<div className="modal-wrapper" onClick={closeModal}>
 			<div className="boards-modal modal">
@@ -55,12 +55,12 @@ const BoardsNavModal = ({ toggleFunc }) => {
 					<button>Create New Board</button>
 				</div>
 				<div className="toggle-theme">
-					<i className="light">
-						<BsSun />
-					</i>
-					<ToggleSwitch onClick={toggleTheme} />
 					<i className="dark">
 						<BsMoon />
+					</i>
+					<ToggleSwitch onClick={toggleTheme} isActive={theme === "light"} />
+					<i className="light">
+						<BsSun />
 					</i>
 				</div>
 			</div>
