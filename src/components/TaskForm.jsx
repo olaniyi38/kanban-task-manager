@@ -33,16 +33,23 @@ const TaskForm = ({ dispatchAction, taskId = null, incomingValues = null }) => {
 
 	const errors = formState.errors;
 
+	
 	const subtasks = data.map(({ id, value }) => {
-		let isCompleted = false
 		if (incomingValues) {
-			isCompleted = incomingValues.subtasks.find(
+			const existingSubtask = incomingValues.subtasks.find(
 				({ title }) => title.toLowerCase() === value.toLowerCase()
-			).isCompleted;
+			);
+
+			return {
+				title: value,
+				isCompleted: existingSubtask ? existingSubtask.isCompleted : false,
+				id: id,
+			};
 		}
 
-		return { title: value, isCompleted, id: id };
+		return { title: value, isCompleted: false, id: id };
 	});
+		console.log(data, subtasks)
 
 	useEffect(() => {
 		if (incomingValues) {
@@ -91,22 +98,22 @@ const TaskForm = ({ dispatchAction, taskId = null, incomingValues = null }) => {
 					<label className="form-group__label">Subtasks</label>
 
 					<AnimatePresence>
-						{data.map((s, i) => (
+						{data.map(({id, value}) => (
 							<motion.div
 								initial={{ opacity: 0, scale: 0.95 }}
 								animate={{ opacity: 1, scale: 1 }}
 								transition={{ duration: 0.3 }}
 								layout
-								key={s.id}
+								key={id}
 							>
 								<FormInput
-									name={`subtask${i}`}
+									name={`subtask${id}`}
 									error={errors}
 									register={register}
-									value={s.value}
-									onChange={(e) => onDataChange(e, s.id)}
+									value={value}
+									onChange={(e) => onDataChange(e, id)}
 								/>
-								<button onClick={() => removeItem(s.id)}>
+								<button onClick={() => removeItem(id)}>
 									<RxCross2 className="iconLg icn-cross" />
 								</button>
 							</motion.div>

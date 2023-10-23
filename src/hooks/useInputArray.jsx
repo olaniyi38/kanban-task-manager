@@ -10,8 +10,11 @@ const useInputArray = () => {
 	const setInitialData = useCallback(
 		(initData, valueField) => {
 			setData(
-				initData.map((d, i) => {
-					return { id: d.id ? d.id : i, value: d[valueField] };
+				initData.map((d) => {
+					return {
+						id: d.id ? d.id : crypto.randomUUID().slice(0, 6),
+						value: d[valueField],
+					};
 				})
 			);
 		},
@@ -23,7 +26,7 @@ const useInputArray = () => {
 			e.preventDefault();
 			setData((prevValue) => [
 				...prevValue,
-				{ id: crypto.randomUUID().slice(0, 4), value: "" },
+				{ id: crypto.randomUUID().slice(0, 6), value: "" },
 			]);
 		},
 		[data]
