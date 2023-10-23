@@ -34,10 +34,13 @@ const TaskForm = ({ dispatchAction, taskId = null, incomingValues = null }) => {
 	const errors = formState.errors;
 
 	const subtasks = data.map(({ id, value }) => {
-		const isCompleted = incomingValues.subtasks.find(
-			({ title }) => title.toLowerCase() === value.toLowerCase()
-		).isCompleted;
-	
+		let isCompleted = false
+		if (incomingValues) {
+			isCompleted = incomingValues.subtasks.find(
+				({ title }) => title.toLowerCase() === value.toLowerCase()
+			).isCompleted;
+		}
+
 		return { title: value, isCompleted, id: id };
 	});
 
