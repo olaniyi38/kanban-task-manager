@@ -17,7 +17,7 @@ const Board = () => {
 			{currentBoard ? (
 				<motion.div key={currentBoard.name} className="board">
 					<div className="board__columns">
-						<AnimatePresence>
+						<AnimatePresence mode="wait">
 							{currentBoard.columns.map((data) => (
 								<BoardColumn
 									key={data.id}
@@ -30,7 +30,6 @@ const Board = () => {
 						<motion.div
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
-							
 							className="board__add-column"
 							onClick={() => {
 								dispactch(setModalType(MODAL_TYPES.editBoard));
