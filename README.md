@@ -1,8 +1,22 @@
-# React + Vite
+## Kanban Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Kanban-based task management web app built with React, Redux Toolkit, SCSS, React Hook Form, Framer Motion, Firebase, and react-beautiful-dnd. It allows users to create, read, update, and delete tasks and boards, and to drag-and-drop tasks between columns. Kanban Task Manager also features a light/dark theme.
 
-Currently, two official plugins are available:
+### Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Create, read, update, and delete tasks across multiple boards
+* Easily move tasks between boards and columns with a simple drag-and-drop operation between columns
+* Create, read, update, and delete boards
+* Light/dark theme
+* The website is fully responsive and mobile-friendly
+* UI animated interactions
+
+### Tech Used
+
+* React
+* Redux Toolkit
+* SCSS
+* React Hook Form
+* Framer Motion
+* Firebase
+* react-beautiful-dnd
