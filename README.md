@@ -5,7 +5,7 @@ A Kanban-based task management web app built with React, Redux Toolkit, SCSS, Re
 ### Features
 
 * Create, read, update, and delete tasks across multiple boards
-* Easily move tasks between boards and columns with a simple drag-and-drop operation between columns
+* Easily move tasks between columns with a simple drag-and-drop operation
 * Create, read, update, and delete boards
 * Light/dark theme
 * The website is fully responsive and mobile-friendly
